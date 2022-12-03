@@ -22,7 +22,7 @@ const Navigation = () => {
           <Link className="nav-link" to="/contact">
             CONTACT
           </Link>
-          <Link className="nav-link" to="/signup">
+          <Link className="nav-link" to="/sign-in">
             SIGN IN
           </Link>
         </div>

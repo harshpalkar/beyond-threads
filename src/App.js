@@ -2,21 +2,18 @@ import "./components/categories/categories.styles.scss";
 import Home from "./routes/home/Home.components";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./routes/navigation/Navigation.component";
-
-const Shopping = () => {
-  return (
-    <div>
-      <h3>This is the Shopping Page</h3>
-    </div>
-  );
-};
+import SignIn from "./routes/sign-in/sign-in.component";
+import Contact from "./routes/contact/contact.component";
+import Shop from "./routes/shop/shop.component";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="shop" element={<Shopping />}></Route>
+        <Route path="shop" element={<Shop />}></Route>
+        <Route path="sign-in" element={<SignIn />}></Route>
+        <Route path="contact" element={<Contact />}></Route>
       </Route>
     </Routes>
   );

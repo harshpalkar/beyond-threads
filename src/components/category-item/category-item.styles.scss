@@ -11,9 +11,9 @@
     &:hover {
         cursor: pointer;
         & .background-image {
+            filter: grayscale(1);
             transform: scale(1.1);
             transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-            color: red;
         }
         & .category-body-container {
             opacity: 0.9;
@@ -56,8 +56,4 @@
             font-size: 16px;
         }
     }
-}
-
-.background-image {
-    filter: grayscale(100%);
 }

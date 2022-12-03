@@ -19,7 +19,7 @@ const Home = () => {
     {
       id: 4,
       title: "Men",
-      imageUrl: require("../../assets/IMG_7142.jpg"),
+      imageUrl: require("../../assets/david-herron-Aku-FFRKlFc-unsplash.jpg"),
     },
     {
       id: 5,
