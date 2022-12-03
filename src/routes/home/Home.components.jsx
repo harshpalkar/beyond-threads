@@ -4,27 +4,27 @@ const Home = () => {
     {
       id: 1,
       title: "Hats",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+      imageUrl: require("../../assets/keagan-henman-ZqXXVeRCyZ0-unsplash.jpg"),
     },
     {
       id: 2,
       title: "Jackets",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
+      imageUrl: require("../../assets/the-nix-company-4Hmj9gkyM6c-unsplash.jpg"),
     },
     {
       id: 3,
       title: "Sneakers",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+      imageUrl: require("../../assets/brad-starkey-Bowrbqz1kgw-unsplash.jpg"),
     },
     {
       id: 4,
       title: "Men",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+      imageUrl: require("../../assets/david-herron-Aku-FFRKlFc-unsplash.jpg"),
     },
     {
       id: 5,
       title: "Women",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+      imageUrl: require("../../assets/katsiaryna-endruszkiewicz-BteCp6aq4GI-unsplash1.jpg"),
     },
   ];
 
