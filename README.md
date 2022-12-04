@@ -1,1 +1,1 @@
-An e-Commerce Web App created using ReactJS.
+An e-Commerce Web App created using ReactJS, Firebase
