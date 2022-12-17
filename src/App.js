@@ -1,4 +1,5 @@
 import "./components/categories/categories.styles.scss";
+import React from "react";
 import Home from "./routes/home/Home.components";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./routes/navigation/Navigation.component";

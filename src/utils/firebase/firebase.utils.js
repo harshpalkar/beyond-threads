@@ -28,6 +28,9 @@ export const auth = getAuth();
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
+export const signInWithGoogleRedirect = () =>
+    signInWithRedirect(auth, provider);
+
 export const db = getFirestore();
 //This actually helps us get access to the firebase database.
 
