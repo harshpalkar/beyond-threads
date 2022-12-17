@@ -1,3 +1,5 @@
+import React from "react";
+
 const Shop = () => {
   return <h2>Shopping page works</h2>;
 };
