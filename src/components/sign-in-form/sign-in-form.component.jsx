@@ -12,6 +12,7 @@ import FormInput from "../form-input/form-input.component";
 import "../form-input/form-input.styles.scss";
 import "../sign-in-form/sign-in-form.styles.scss";
 import Button from "../button/button.component";
+import { signInWithTwitter } from "../../utils/firebase/firebase.utils";
 
 const defaultFormFields = {
   email: "",
@@ -28,6 +29,10 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
+    await createUserDocument(user);
+  };
+  const signInWithTwitterAccount = async () => {
+    const { user } = await signInWithTwitter();
     await createUserDocument(user);
   };
 
@@ -85,7 +90,14 @@ const SignInForm = () => {
             type="button"
             onClick={signInWithGoogle}
           >
-            Google Sign In
+            GOOGLE
+          </Button>
+          <Button
+            buttonType="googleInverted"
+            type="button"
+            onClick={signInWithTwitterAccount}
+          >
+            TWITTER
           </Button>
         </div>
       </form>
