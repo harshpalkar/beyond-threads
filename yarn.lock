@@ -5551,6 +5551,11 @@
     "locate-path" "^6.0.0"
     "path-exists" "^4.0.0"
 
+"firacode@^6.2.0":
+  "integrity" "sha512-t5R3aO2BmhRXnYtKXbImLVNsILuCIbJ/XlDzBufjpi3il8P/CVdpWco83Ud3r2Tl0gitAmyP4o1fbJ52ozV1jw=="
+  "resolved" "https://registry.npmjs.org/firacode/-/firacode-6.2.0.tgz"
+  "version" "6.2.0"
+
 "firebase@^9.14.0":
   "integrity" "sha512-Fa8qFahDY/pMYMzwPGcfpUkAS3Q55qJ0QKD+5xnXjSX/jVHsJqoXtxapmyDCfAKktiLhXIcRElW1VDVd9xGwQQ=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-9.15.0.tgz"
