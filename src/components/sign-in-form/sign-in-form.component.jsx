@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
 import {
   createUserWithEmailAndPassword,
@@ -12,6 +12,11 @@ import FormInput from "../form-input/form-input.component";
 import "../form-input/form-input.styles.scss";
 import "../sign-in-form/sign-in-form.styles.scss";
 import Button from "../button/button.component";
+import { signInWithTwitter } from "../../utils/firebase/firebase.utils";
+import { UserContext } from "../../context/user.context";
+
+//This UserContext will give us the value which is obtained from the value part in user context component.
+//And the value we obtain is the current user of the useState as well as the setter function.
 
 const defaultFormFields = {
   email: "",
@@ -23,6 +28,7 @@ const SignInForm = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const { setCurrentUser } = useContext(UserContext);
 
   console.log(formFields);
 
@@ -30,13 +36,17 @@ const SignInForm = () => {
     const { user } = await signInWithGooglePopup();
     await createUserDocument(user);
   };
+  const signInWithTwitterAccount = async () => {
+    const { user } = await signInWithTwitter();
+    await createUserDocument(user);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await SignInUserWithEmailPassword(email, password);
-      console.log(response);
+      const { user } = await SignInUserWithEmailPassword(email, password);
+      setCurrentUser(user);
     } catch (error) {
       if (error.code === "auth/wrong-password") {
         alert("Wrong Password!");
@@ -85,7 +95,14 @@ const SignInForm = () => {
             type="button"
             onClick={signInWithGoogle}
           >
-            Google Sign In
+            GOOGLE
+          </Button>
+          <Button
+            buttonType="googleInverted"
+            type="button"
+            onClick={signInWithTwitterAccount}
+          >
+            TWITTER
           </Button>
         </div>
       </form>

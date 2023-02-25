@@ -9,7 +9,9 @@
 
   .buttons-container {
     display: flex;
+
+    width: max-content;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
   }
 }

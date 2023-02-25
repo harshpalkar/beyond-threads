@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  TwitterAuthProvider,
+  signOut,
 } from "firebase/auth";
 
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
@@ -21,17 +23,26 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
+
+const twitterProvider = new TwitterAuthProvider();
+twitterProvider.setCustomParameters({
+  prompt: "select_account",
+  lang: "EN",
+});
+
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
   prompt: "select_account",
 });
 
 export const auth = getAuth();
+auth.languageCode = "it";
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithTwitter = () => signInWithPopup(auth, twitterProvider);
 
-export const signInWithGoogleRedirect = () =>
-  signInWithRedirect(auth, provider);
+// export const signInWithGoogleRedirect = () =>
+//   signInWithRedirect(auth, provider);
 
 export const db = getFirestore();
 //This actually helps us get access to the firebase database.
@@ -80,4 +91,9 @@ export const SignInUserWithEmailPassword = async (email, password) => {
   if (!email || !password) return;
 
   return await signInWithEmailAndPassword(auth, email, password);
+};
+
+export const signOutUser = async () => {
+  const res = await signOut(auth);
+  console.log(res);
 };
